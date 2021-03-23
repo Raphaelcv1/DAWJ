@@ -16,8 +16,11 @@ public class Pedido {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@DateTimeFormat("yyyy-MM-dd")
+	@DateTimeFormat //("yyyy-MM-dd")
 	private Instant data;
+	
+	public Pedido() {
+	}
 
 	public Long getId() {
 		return id;

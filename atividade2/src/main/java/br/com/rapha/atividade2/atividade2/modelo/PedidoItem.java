@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class PedidoItem {
@@ -12,9 +13,15 @@ public class PedidoItem {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@ManyToOne
 	private Pedido pedido;
+	@ManyToOne
 	private Produto produto;
 	private Integer quantidade;
+	
+	public PedidoItem() {
+	}
+	
 	public Long getId() {
 		return id;
 	}

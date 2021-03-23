@@ -14,6 +14,10 @@ public class Produto {
 	
 	private String nome;
 	private Float valor;
+	
+	protected Produto() {
+	}
+	
 	public Long getId() {
 		return id;
 	}
