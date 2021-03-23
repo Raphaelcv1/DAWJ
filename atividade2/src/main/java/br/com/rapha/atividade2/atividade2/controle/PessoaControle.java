@@ -52,7 +52,7 @@ public class PessoaControle {
 	public String excluirPessoa(@PathVariable("id") long id) {
 		java.util.Optional<Pessoa> pessoaOpt =  pessoaRepo.findById(id);
 		if(pessoaOpt.isEmpty()) {
-			throw new IllegalArgumentException("Pessao inválida");
+			throw new IllegalArgumentException("Pessoa inválida");
 		}
 		pessoaRepo.delete(pessoaOpt.get());
 		return "redirect:/pessoas";

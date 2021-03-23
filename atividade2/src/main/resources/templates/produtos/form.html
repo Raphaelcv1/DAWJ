@@ -13,17 +13,16 @@
 	<div class="container my-2">
 		<h1>Atividade 2</h1>
 		<hr>
-		<h2>Editar Pessoa</h2>
-		<form action="#" th:action="@{/pessoas/salvar}" th:object="${pessoa}" method="POST">
+		<h2>Editar Produto</h2>
+		<form action="#" th:action="@{/produtos/salvar}" th:object="${produto}" method="POST">
 			<input type="hidden" id="id" th:field="*{id}"> 
 			<input type="text" th:field="*{nome}" placeholder="Nome" class="form-control mb-4 col-4"> 
-			<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4"> 
-			<input type="text" th:field="*{telefone}" placeholder="Telefone" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{valor}" placeholder="Valor" class="form-control mb-4 col-4">
 
 			<button type="submit" class="btn btn-info col-2">Salvar</button>
 		</form>
 		<hr>
-		<a th:href="@{/pessoas}">Retornar para a lista de pessoas</a>
+		<a th:href="@{/produtos}">Retornar para a lista de produtos</a>
 	</div>
 </body>
 </html>
