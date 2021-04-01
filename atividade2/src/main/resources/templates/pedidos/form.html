@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Atividade 2</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container my-2">
+		<h1>Atividade 2</h1>
+		<hr>
+		<h2>Editar Pedido</h2>
+		<form action="#" th:action="@{/pedidos/salvar}" th:object="${pedido}"
+			method="POST">
+			<input type="hidden" id="id" th:field="*{id}"> 
+			<!--   <input type="text" th:field="*{pessoa.nome}" placeholder="Nome"
+				class="form-control mb-4 col-4"> -->
+				
+				<select
+				class="form-control select2" style="width: 100%;"
+				th:field="*{pessoa}">
+
+				<option th:each="pessoa : ${listaPessoas}" th:text="${pessoa.nome}"
+					th:value="${pessoa.id}"></option>
+			</select> 
+			
+			<!-- <input type="date" th:field="*{data}" placeholder="Data"
+				class="form-control mb-4 col-4"> -->
+
+			<button type="submit" class="btn btn-info col-2">Salvar</button>
+		</form>
+		<hr>
+		<a th:href="@{/pedidos}">Retornar para a lista de pedidos</a>
+	</div>
+</body>
+</html>

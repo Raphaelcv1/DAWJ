@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.sun.el.stream.Optional;
-
 import br.com.rapha.atividade2.atividade2.modelo.Pessoa;
 import br.com.rapha.atividade2.atividade2.modelo.PessoaRepository;
 

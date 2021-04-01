@@ -50,7 +50,7 @@ public class ProdutoControle {
 	public String excluirProduto(@PathVariable("id") long id) {
 		java.util.Optional<Produto> produtoOpt =  produtoRepo.findById(id);
 		if(produtoOpt.isEmpty()) {
-			throw new IllegalArgumentException("Produto inválida");
+			throw new IllegalArgumentException("Produto inválido");
 		}
 		produtoRepo.delete(produtoOpt.get());
 		return "redirect:/produtos";
