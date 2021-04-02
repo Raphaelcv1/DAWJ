@@ -17,10 +17,8 @@
 		<form action="#" th:action="@{/pedidos/salvar}" th:object="${pedido}"
 			method="POST">
 			<input type="hidden" id="id" th:field="*{id}"> 
-			<!--   <input type="text" th:field="*{pessoa.nome}" placeholder="Nome"
-				class="form-control mb-4 col-4"> -->
-				
-				<select
+			
+			<select
 				class="form-control select2" style="width: 100%;"
 				th:field="*{pessoa}">
 
@@ -28,8 +26,26 @@
 					th:value="${pessoa.id}"></option>
 			</select> 
 			
-			<!-- <input type="date" th:field="*{data}" placeholder="Data"
-				class="form-control mb-4 col-4"> -->
+			<br> <br>
+
+			<!-- <select class="form-control select2"
+				style="width: 100%;" th:field="*{produto}">
+
+				<option th:each="produto : ${listaProdutos}" th:text="${produto.nome}"
+					th:value="${produto.id}"></option>
+			</select>  -->
+
+
+			<label>Produto </label> 
+			
+			<select class="form-control select2"
+				style="width: 100%;" th:field="*{objetoProduto}">
+
+				<option th:each="produto : ${listaProdutos}"
+					th:text="${produto.nome} " th:value="${produto.id}"></option>
+			</select> 
+			
+			<br> <br>
 
 			<button type="submit" class="btn btn-info col-2">Salvar</button>
 		</form>
